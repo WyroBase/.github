@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Source for profile/assets/terminal-{light,dark}.png.
+     Every line below is verbatim output of `npx wyro-check@0.2.6 orm/express`
+     run inside a clone of github.com/prisma/prisma-examples (2026-10-14). The
+     only edits: the clone path is shown as /Users/you/…, long lines wrap with a
+     hanging indent, and the marked ⋯ line stands in for the rule explanation
+     and the 10 warnings. Re-run before changing any number here. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=JetBrains+Mono:wght@400;600&display=block" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f9fafb; --surface:#ffffff; --bar:#f3f4f6; --border:#e3e6eb;
+    --text:#14151a; --muted:#565c69; --faint:#9096a3;
+    --red:#d93036; --amber:#b25e09; --green:#0b9a5b;
+    --shadow:0 1px 2px rgba(16,24,40,.05),0 24px 48px -24px rgba(16,24,40,.18);
+  }
+  html.dark{
+    --bg:#0a0a0c; --surface:#121215; --bar:#17171c; --border:#26262d;
+    --text:#ececf1; --muted:#a3a3b0; --faint:#6e6e7b;
+    --red:#ff6369; --amber:#f5a524; --green:#3dd68c;
+    --shadow:inset 0 1px 0 rgba(255,255,255,.05),0 1px 2px rgba(0,0,0,.6),0 24px 48px -24px rgba(0,0,0,.9);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1100px}
+  body{background:var(--bg);padding:36px 40px 40px;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .win{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .bar{height:42px;background:var(--bar);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;position:relative}
+  .dots{display:flex;gap:8px}
+  .dots i{width:12px;height:12px;border-radius:50%;display:block}
+  .dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+  .title{position:absolute;left:0;right:0;text-align:center;font-size:13px;font-weight:500;color:var(--faint);pointer-events:none}
+  .body{padding:22px 26px 26px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:15px;line-height:1.62;color:var(--text)}
+  .l{white-space:pre-wrap;padding-left:var(--h,0ch);text-indent:calc(-1 * var(--h,0ch) + var(--i,0ch))}
+  .p{color:var(--faint)} .b{font-weight:600} .d{color:var(--faint)} .m{color:var(--muted)}
+  .r{color:var(--red);font-weight:600} .a{color:var(--amber);font-weight:600}
+  .gap{height:1.62em}
+  .el{color:var(--faint);font-style:italic}
+</style>
+<script>if(location.search.includes("dark"))document.documentElement.classList.add("dark")</script>
+</head>
+<body>
+<div class="win">
+  <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="title">prisma-examples — zsh</div></div>
+  <div class="body">
+    <div class="l"><span class="p">~/prisma-examples $</span> <span class="b">npx wyro-check orm/express</span></div>
+    <div class="gap"></div>
+    <div class="l b">wyro-check <span class="m" style="font-weight:400">/Users/you/prisma-examples/orm/express</span></div>
+    <div class="gap"></div>
+    <div class="l m">  read 4 files · 9 routes · 2 tables</div>
+    <div class="gap"></div>
+    <div class="l" style="--i:2ch;--h:4ch"><span class="r">✗ [CRITICAL · high confidence]</span> <span class="b">No route in this backend authenticates: 8 routes reach Post and User with nothing in front of them.</span></div>
+    <div class="l m" style="--i:4ch;--h:4ch">8 routes reach data and none of them authenticates: 4 can write and 4 more can read. Anyone who can reach the server can do what they do. User holds personal or secret data.</div>
+    <div class="l">      writes Post         POST /post <span class="d">src/index.ts:32</span></div>
+    <div class="l">      writes Post         PUT /post/:id/views <span class="d">src/index.ts:44</span></div>
+    <div class="l">      writes Post         PUT /publish/:id <span class="d">src/index.ts:63</span></div>
+    <div class="l">      writes Post         DELETE /post/:id <span class="d">src/index.ts:84</span></div>
+    <div class="l">      reads  User         GET /users <span class="d">src/index.ts:94</span></div>
+    <div class="l">      reads  Post         GET /user/:id/drafts <span class="d">src/index.ts:99</span></div>
+    <div class="l">      reads  Post         GET /post/:id <span class="d">src/index.ts:112</span></div>
+    <div class="l">      reads  Post         GET /feed <span class="d">src/index.ts:121</span></div>
+    <div class="l" style="--i:4ch;--h:13ch"><span class="m">missing:</span> Authentication applied once, at the app or the router, so every route inherits it. Exempt only the sign-in routes.</div>
+    <div class="gap"></div>
+    <div class="l el">  ⋯ the rule's explanation and 10 warnings (validation, rate limits) trimmed for this image</div>
+    <div class="gap"></div>
+    <div class="l">  <span class="r">1 error</span> <span class="d">·</span> <span class="a">10 warnings</span></div>
+  </div>
+</div>
+</body>
+</html>

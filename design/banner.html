@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Source for profile/assets/banner-{light,dark}.png. Rendered by design/render.sh.
+     Tokens are the landing page's (.hp in wyro/app/landing.css): light-first,
+     Inter 700, tight tracking, one monochrome italic word, colour only in the mark. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,700&display=block" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f9fafb; --surface:#ffffff; --border:#e9ebef; --border-strong:#d5d9e0;
+    --text:#14151a; --muted:#565c69; --faint:#878d9b; --dot:#dfe2e8;
+    --bloom:rgba(137,129,241,.16);
+  }
+  html.dark{
+    --bg:#0a0a0c; --surface:#121215; --border:#232329; --border-strong:#34343d;
+    --text:#f4f4f6; --muted:#9d9daa; --faint:#6e6e7b; --dot:#1d1d23;
+    --bloom:rgba(137,129,241,.20);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1280px;height:420px;overflow:hidden}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:Inter,system-ui,sans-serif;font-feature-settings:"ss01","cv11";
+    -webkit-font-smoothing:antialiased;position:relative;
+  }
+  .grid{
+    position:absolute;inset:0;
+    background-image:radial-gradient(var(--dot) 1.2px,transparent 1.4px);
+    background-size:22px 22px;background-position:11px 11px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 45%,#000 20%,transparent 75%);
+  }
+  .bloom{position:absolute;left:50%;top:-180px;width:900px;height:520px;transform:translateX(-50%);
+    background:radial-gradient(ellipse at 50% 40%,var(--bloom),transparent 65%);}
+  .wrap{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;letter-spacing:-.03em}
+  .brand img{width:30px;height:30px}
+  h1{margin-top:26px;font-weight:700;font-size:64px;line-height:1.04;letter-spacing:-.043em}
+  h1 em{font-style:italic;letter-spacing:-.03em}
+  p{margin-top:20px;font-size:20px;line-height:1.5;color:var(--muted);letter-spacing:-.01em}
+  .chips{display:flex;gap:10px;margin-top:28px}
+  .chip{font-size:13.5px;font-weight:500;color:var(--muted);padding:7px 14px;border-radius:999px;
+    border:1px solid var(--border);background:var(--surface)}
+</style>
+<script>if(location.search.includes("dark"))document.documentElement.classList.add("dark")</script>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="bloom"></div>
+  <div class="wrap">
+    <div class="brand"><img src="icon.png" alt="">Wyro</div>
+    <h1>Generating a backend is easy.<br>Checking one <em>isn’t</em>.</h1>
+    <p>The architecture check for the backend your coding agent just wrote.</p>
+    <div class="chips">
+      <span class="chip">Rule-based, not a model</span>
+      <span class="chip">Same commit, same result</span>
+      <span class="chip">TypeScript · JavaScript · Python</span>
+    </div>
+  </div>
+</body>
+</html>
