@@ -75,7 +75,7 @@ Each finding is ranked by risk, points at the file and line, and says what is mi
 
 ## What it reads
 
-| | |
+| | Supported |
 |---|---|
 | **Languages** | TypeScript, JavaScript, Python |
 | **Routes** | Express, Fastify, Hono, NestJS, Next.js route handlers and Server Actions, FastAPI, Supabase, SAP CAP |
@@ -92,7 +92,7 @@ If it cannot read your backend it says so, and says what the repository looks li
 
 ## Repositories
 
-| | |
+| Repository | What it is |
 |---|---|
 | [**wyro-check-action**](https://github.com/DominicPaaul7/wyro-check-action) | GitHub Action that fails a pull request introducing a new architecture violation |
 | [**wyro-cursor-plugin**](https://github.com/DominicPaaul7/wyro-cursor-plugin) | Wyro for Claude Code and Cursor: the MCP server, a rule, and the check and fix skills |
